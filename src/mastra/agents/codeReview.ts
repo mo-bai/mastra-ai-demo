@@ -1,5 +1,9 @@
-import { deepseek } from '@ai-sdk/deepseek'
 import { Agent } from '@mastra/core/agent'
+import { createDeepSeek } from '@ai-sdk/deepseek'
+
+const deepseek = createDeepSeek({
+  apiKey: process.env.DEEPSEEK_API_KEY ?? ''
+})
 
 export const codeReviewAgent = new Agent({
   name: 'Code Review Agent',
